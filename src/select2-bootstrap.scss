@@ -162,6 +162,13 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     }
   }
 
+  .select2-search--inline {
+    .select2-search__field {
+      // want to counteract builtin default select2 theme
+      margin-left: 0;
+      margin-bottom: -5px;
+    }
+  }
   /**
    * No outline for all search fields - in the dropdown
    * and inline in multi Select2s.
@@ -456,18 +463,14 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     min-height: $s2bs-input-height-base;
     padding: 0;
     height: auto;
+    cursor: text;
+    position: relative;
 
     .select2-selection__rendered {
-      box-sizing: border-box;
-      display: block;
+      display: inline;
       line-height: $s2bs-line-height-base;
       list-style: none;
-      margin: 0;
-      overflow: hidden;
       padding: 0;
-      width: 100%;
-      text-overflow: ellipsis;
-      white-space: nowrap;
     }
 
     .select2-selection__placeholder {
@@ -488,7 +491,13 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       cursor: default;
       float: left;
       margin: ($s2bs-padding-base-vertical - 1) 0 0 $s2bs-padding-base-horizontal/2;
-      padding: 0 $s2bs-padding-base-vertical;
+      padding: 0 $s2bs-padding-base-vertical 0 0;
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: bottom;
+      white-space: nowrap;
     }
 
     /**
@@ -498,20 +507,20 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     .select2-search--inline {
       .select2-search__field {
         background: transparent;
-        padding: 0 $s2bs-padding-base-horizontal;
-        height: $s2bs-input-height-base - 2;
+        padding: ($s2bs-padding-base-vertical/2 - 1) $s2bs-padding-base-horizontal;
+        height: $s2bs-input-height-base - 5;
         line-height: $s2bs-line-height-base;
-        margin-top: 0;
-        min-width: 5em;
+        min-width: 7em;
       }
     }
 
     .select2-selection__choice__remove {
+      background-color: transparent;
+      border: none;
       color: $s2bs-remove-choice-color;
       cursor: pointer;
       display: inline-block;
       font-weight: bold;
-      margin-right: $s2bs-padding-base-vertical / 2;
 
       &:hover {
         color: $s2bs-remove-choice-hover-color;
@@ -656,6 +665,12 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
      *    correctly.
      */
 
+    .select2-search--inline {
+      .select2-search__field {
+        margin-right: 0;
+      }
+    }
+
     .select2-selection--single {
       padding-left: $s2bs-padding-base-horizontal + $s2bs-caret-width-base*3;
       padding-right: $s2bs-padding-base-horizontal;
@@ -692,13 +707,8 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       }
 
       .select2-selection__choice {
-        margin-left: 0;
-        margin-right: $s2bs-padding-base-horizontal/2;
-      }
-
-      .select2-selection__choice__remove {
-        margin-left: 2px;
-        margin-right: auto;
+        margin-right: 0;
+        margin-left: $s2bs-padding-base-horizontal/2;
       }
     }
   }

@@ -9,6 +9,8 @@
     "doc": "docs"
   },
   "scripts": {
+    "start": "grunt serve",
+    "build": "grunt build",
     "test": "grunt nodeunit"
   },
   "repository": {
@@ -29,7 +31,6 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "Respond.js": "github:scottjehl/Respond#1.4.2",
     "anchor-js": "^3.2.1",
     "autoprefixer": "^6.4.0",
     "bootstrap": "^3.3.7",
@@ -39,17 +40,17 @@
     "grunt-browser-sync": "^2.2.0",
     "grunt-bump": "^0.8.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-less": "^1.4.0",
     "grunt-contrib-nodeunit": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-gh-pages": "^1.2.0",
+    "grunt-gh-pages": "^4.0.0",
     "grunt-jekyll": "^0.4.4",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^2.0.0",
-    "grunt-scss2less": "0.0.1",
     "grunt-stamp": "^0.3.0",
-    "matchdep": "^1.0.1"
+    "matchdep": "^2.0.0",
+    "Respond.js": "github:scottjehl/Respond#1.4.2"
   }
 }

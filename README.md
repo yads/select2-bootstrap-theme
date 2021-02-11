@@ -132,7 +132,7 @@ $.fn.select2.defaults.set( "theme", "bootstrap" );
 
 #### Contributing
 
-The project offers [Less](http://lesscss.org/) and [Sass](http://sass-lang.com/) sources for building `select2-bootstrap.css`; both make use of variables from either [Bootstrap](https://github.com/twbs/bootstrap) (Less) or [Bootstrap for Sass](https://github.com/twbs/bootstrap-sass). The demo pages are built using [Jekyll](http://jekyllrb.com/) and there are a bunch of [Grunt](http://gruntjs.com/) tasks to ease development.
+The project offers [Sass](http://sass-lang.com/) sources for building `select2-bootstrap.css`; makes use of variables from [Bootstrap for Sass](https://github.com/twbs/bootstrap-sass). The demo pages are built using [Jekyll](http://jekyllrb.com/) and there are a bunch of [Grunt](http://gruntjs.com/) tasks to ease development.
 
 With [Jekyll](http://jekyllrb.com/), [node.js](http://nodejs.org/) and [Less](http://lesscss.org/) installed, run
 
@@ -145,9 +145,7 @@ to install all necessary development dependencies (Sass is compiled v[LibSass](h
  * `grunt build` builds `docs`
  * `grunt serve` builds `docs` and serves them via Jekyll's `--watch` flag on http://localhost:3000
 
-Develop in `src/select2-bootstrap.scss` and test your changes using `grunt serve`. Ideally, port your changes to `lib/select2-bootstrap.less` and make sure tests are passing to verify that both Less and Sass compile down to the target CSS via `npm test`.
-
-`grunt scss2less` helps in converting the Sass source to its Less counterpart (and overwrites the existing `src/select2-bootstrap.less`), but doesn't do the full job – please review the changes to the Less source file and make the necessary adjustments.
+Develop in `src/select2-bootstrap.scss` and test your changes using `grunt serve`.
 
 #### Copyright and license
 

@@ -1,12 +1,13 @@
 /*!
  * Select2 Bootstrap Theme v0.1.0-beta.10 (https://select2.github.io/select2-bootstrap-theme)
- * Copyright 2015-2017 Florian Kissling and contributors (https://github.com/select2/select2-bootstrap-theme/graphs/contributors)
+ * Copyright 2015-2021 Florian Kissling and contributors (https://github.com/select2/select2-bootstrap-theme/graphs/contributors)
  * Licensed under MIT (https://github.com/select2/select2-bootstrap-theme/blob/master/LICENSE)
  */
 
 .select2-container--bootstrap {
   display: block;
-  /*------------------------------------*      #COMMON STYLES
+  /*------------------------------------*\
+      #COMMON STYLES
   \*------------------------------------*/
   /**
    * Search field in the Select2 dropdown.
@@ -30,7 +31,8 @@
    * @see https://select2.github.io/examples.html#disabled
    * @see http://getbootstrap.com/css/#forms-control-disabled
    */
-  /*------------------------------------*      #DROPDOWN
+  /*------------------------------------*\
+      #DROPDOWN
   \*------------------------------------*/
   /**
    * Dropdown border color and box-shadow.
@@ -38,9 +40,11 @@
   /**
    * Limit the dropdown height.
    */
-  /*------------------------------------*      #SINGLE SELECT2
+  /*------------------------------------*\
+      #SINGLE SELECT2
   \*------------------------------------*/
-  /*------------------------------------*    #MULTIPLE SELECT2
+  /*------------------------------------*\
+    #MULTIPLE SELECT2
   \*------------------------------------*/
   /**
    * Address Bootstrap control sizing classes
@@ -51,7 +55,8 @@
    * @see http://getbootstrap.com/css/#forms-control-sizes
    */
   /* 1 */
-  /*------------------------------------*    #RTL SUPPORT
+  /*------------------------------------*\
+    #RTL SUPPORT
   \*------------------------------------*/
 }
 
@@ -78,6 +83,11 @@
   border-radius: 4px;
   color: #555555;
   font-size: 14px;
+}
+
+.select2-container--bootstrap .select2-search--inline .select2-search__field {
+  margin-left: 0;
+  margin-bottom: -5px;
 }
 
 .select2-container--bootstrap .select2-search__field {
@@ -216,8 +226,8 @@
 }
 
 .select2-container--bootstrap.select2-container--open.select2-container--above .select2-selection {
-  border-top-right-radius: 0;
   border-top-left-radius: 0;
+  border-top-right-radius: 0;
   border-top-color: transparent;
 }
 
@@ -316,6 +326,8 @@
   min-height: 34px;
   padding: 0;
   height: auto;
+  cursor: text;
+  position: relative;
   /**
      * Make Multi Select2's choices match Bootstrap 3's default button styles.
      */
@@ -328,18 +340,10 @@
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  display: block;
+  display: inline;
   line-height: 1.42857143;
   list-style: none;
-  margin: 0;
-  overflow: hidden;
   padding: 0;
-  width: 100%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-selection__placeholder {
@@ -356,24 +360,30 @@
   cursor: default;
   float: left;
   margin: 5px 0 0 6px;
-  padding: 0 6px;
+  padding: 0 6px 0 0;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  white-space: nowrap;
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
   background: transparent;
-  padding: 0 12px;
-  height: 32px;
+  padding: 2px 12px;
+  height: 29px;
   line-height: 1.42857143;
-  margin-top: 0;
-  min-width: 5em;
+  min-width: 7em;
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove {
+  background-color: transparent;
+  border: none;
   color: #999;
   cursor: pointer;
   display: inline-block;
   font-weight: bold;
-  margin-right: 3px;
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove:hover {
@@ -524,6 +534,10 @@
      */
 }
 
+.select2-container--bootstrap[dir="rtl"] .select2-search--inline .select2-search__field {
+  margin-right: 0;
+}
+
 .select2-container--bootstrap[dir="rtl"] .select2-selection--single {
   padding-left: 24px;
   padding-right: 12px;
@@ -556,16 +570,12 @@
 }
 
 .select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
-  margin-left: 0;
-  margin-right: 6px;
+  margin-right: 0;
+  margin-left: 6px;
 }
 
-.select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
-  margin-left: 2px;
-  margin-right: auto;
-}
-
-/*------------------------------------*  #ADDITIONAL GOODIES
+/*------------------------------------*\
+  #ADDITIONAL GOODIES
 \*------------------------------------*/
 /**
  * Address Bootstrap's validation states
@@ -648,8 +658,8 @@
  */
 .input-group > .select2-hidden-accessible:first-child + .select2-container--bootstrap > .selection > .select2-selection,
 .input-group > .select2-hidden-accessible:first-child + .select2-container--bootstrap > .selection > .select2-selection.form-control {
-  border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .input-group > .select2-hidden-accessible:not(:first-child) + .select2-container--bootstrap:not(:last-child) > .selection > .select2-selection,
@@ -659,8 +669,8 @@
 
 .input-group > .select2-hidden-accessible:not(:first-child):not(:last-child) + .select2-container--bootstrap:last-child > .selection > .select2-selection,
 .input-group > .select2-hidden-accessible:not(:first-child):not(:last-child) + .select2-container--bootstrap:last-child > .selection > .select2-selection.form-control {
-  border-bottom-left-radius: 0;
   border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .input-group > .select2-container--bootstrap {
